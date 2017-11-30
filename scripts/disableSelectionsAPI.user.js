@@ -9,13 +9,6 @@
 
 (function() {
     // disable getSelection
-    var disableSelections = function() {
-        document.getSelection = window.getSelection = function() {};
-    };
-    
-    // inject script
-    var script = document.createElement ("script");
-    script.appendChild (document.createTextNode ("(" + disableSelections + ")();"));
-    (document.body || document.head || document.documentElement).appendChild (script);
+    document.getSelection = window.getSelection = function() {};
 })();
 
