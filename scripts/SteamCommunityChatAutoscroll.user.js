@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Steam Community Chat AutoScroll
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  AutoScroll online steam chat.
 // @author       patkub
-// @match        https://steamcommunity.com/chat
+// @match        https://steamcommunity.com/chat*
 // @grant        none
 // ==/UserScript==
 
