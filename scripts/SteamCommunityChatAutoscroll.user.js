@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam Community Chat AutoScroll
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  AutoScroll online steam chat.
 // @author       patkub
 // @contributor  AleXu224
@@ -29,8 +29,9 @@ const checkInterval = 100;
       for (var i = 0; i < x.length; i++){
         if (users[i] != undefined){
           // If the number of messages for the chat has been set then do this
-          if (isNewMessage(x[i].children.length, users[i].messageCount)){
-            // If the isNewMessage function returns true then update the message count
+          if (x[i].children.length != users[i].messageCount){
+            // If the current number of messages does not match the number that is stored
+            // update the message count
             users[i].messageCount = x[i].children.length;
             // and scroll the chat
             scrollChat();
@@ -41,17 +42,6 @@ const checkInterval = 100;
         }
       }
     }, checkInterval);
-
-    // The function that checks if there is any new messages
-    function isNewMessage(newMessageCount, oldMessageCount){
-        // If the current number of messages does not match the number that is stored then return true, else false
-        if (newMessageCount != oldMessageCount){
-            console.log(`Children Count: ${newMessageCount}, oldMessageCount: ${oldMessageCount}`)
-            return true;
-        } else {
-            return false;
-        }
-    }
     
     // Instantly scroll chat when you send a message
     let chatForm = document.getElementById('chatform');
