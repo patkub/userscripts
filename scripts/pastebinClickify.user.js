@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         pastbin clickify
+// @name         Pastebin Clickify
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  makes list of links clickable
