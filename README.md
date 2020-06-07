@@ -7,3 +7,4 @@
 * [Steam Community Chat AutoScroll](https://github.com/patkub/userscripts/raw/master/scripts/SteamCommunityChatAutoscroll.user.js)
 * [Zoom Logger](https://github.com/patkub/userscripts/raw/master/scripts/zoom.us%20logger/zoom.us.logger.user.js)
 * [Pastebin Clickify](https://github.com/patkub/userscripts/raw/master/scripts/pastebinClickify.user.js)
+* [PlanetaPL double-click fullscreen](https://github.com/patkub/userscripts/raw/master/scripts/planetapl.fullscreen.user.js)
