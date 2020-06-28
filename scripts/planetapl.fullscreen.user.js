@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PlanetaPL double-click to fullscreen
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  double-click video to fullscreen
 // @author       You
 // @include      /https?://online.planetapl.tv/*/
@@ -10,6 +10,8 @@
 // @resource     ready       https://unpkg.com/@ryanmorr/ready/dist/ready.umd.js
 // @grant        GM_getResourceText
 // ==/UserScript==
+
+/* global require $ */
 
 require(['ready'], (ready) => {
     $(function() {
