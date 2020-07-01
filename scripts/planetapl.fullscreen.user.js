@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PlanetaPL double-click to fullscreen
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  double-click video to fullscreen
 // @author       You
 // @include      /https?://online.planetapl.tv/*/
@@ -41,7 +41,7 @@ require(['ready'], (ready) => {
             }
         }
 
-        ready('#player-video', function(element) {
+        ready('#player-video', (playerVideoEl) => {
             // overlay a div to block click events
             $(".player-video-info-wrap").prepend($(`<div style="
 position: absolute;
@@ -49,9 +49,9 @@ left: 0;
 top: 0;
 width: 100%;
 height: 100%;
-"></div>`).on('dblclick', function() {
+"></div>`).on('dblclick', () => {
                 // use browser's fullscreen api
-                document.fullscreenElement ? closeFullscreen() : openFullscreen(document.getElementById("player-video"));
+                document.fullscreenElement ? closeFullscreen() : openFullscreen(playerVideoEl);
                 // or click the player's fullscreen button
                 //document.fullscreenElement ? $(".player-controls-full-fullscreen").click() : $(".player-fullscreen-trigger").click();
             }));
@@ -59,18 +59,16 @@ height: 100%;
             // bring video controls above overlay
             $(".player-controls").css("z-index", "1");
 
-            // define keypress handler
-            function doc_keyUp(e) {
+            // define and register keypress handler
+            document.addEventListener('keyup', (e) => {
                 if (e.metaKey && e.keyCode == 112) {
                     // meta + F1
                     closeFullscreen();
                 } else if (e.metaKey && e.keyCode == 113) {
                     // meta + F2
-                    openFullscreen(document.getElementById("player-video"));
+                    openFullscreen(playerVideoEl);
                 }
-            }
-            // register the keypress handler
-            document.addEventListener('keyup', doc_keyUp, false);
+            }, false);
         });
     });
 });
