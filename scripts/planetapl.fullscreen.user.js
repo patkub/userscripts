@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         PlanetaPL double-click to fullscreen
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  double-click video to fullscreen
 // @author       You
 // @include      /https?://online.planetapl.tv/*/
-// @require      https://github.com/plohoj/userscript-requirejs/releases/download/0.0.1/userscript-require.js
-// @resource     requirejs   https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js
+// @require      https://github.com/plohoj/userscript-requirejs/releases/download/0.0.1/userscript-require.min.js
+// @resource     requirejs   https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js
 // @resource     ready       https://unpkg.com/@ryanmorr/ready/dist/ready.umd.js
 // @grant        GM_getResourceText
 // ==/UserScript==
